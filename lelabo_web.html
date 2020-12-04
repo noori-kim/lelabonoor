@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>LE LABO web</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	 <link
+  	 rel="stylesheet"
+   	 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="icon" href="00_img/LELABO_home_icon.png" sizes="70x70" type="image/png">
+    <script src="https://kit.fontawesome.com/6cec0af3fc.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+	<style>
+		@font-face {
+		font-family: 'UhBeemysen';
+		src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeemysen.woff') 		
+		format('woff');		
+		font-weight: normal;		
+		font-style: normal;
+		}
+	html{
+		scroll-behavior: smooth;
+	}	
+            
+	body{
+		font-family: 'UhBeemysen';
+		font-size: 1.5em;
+	}
+
+	*{margin: 0;
+	padding: 0;}
+	html, body{
+		width: 100%;	
+		height: 100%;
+	}
+	#wrapper{
+		width: 400%;
+		height: 100%;
+		position: absolute;
+		overflow: hidden;
+		background: url(00_img/LELABO_BBB.jpg);
+		background-size: contain;
+	}
+	#wrapper>section{
+		width: 25%;
+		height: 100%;
+		float: left;
+		position: relative;
+		box-sizing: border-box;
+	}
+	/*뒷배경*/
+	/*#wrapper>section:nth-child(1){
+		background: url(00_img/LELABO_BG01.png) no-repeat center bottom;
+		background-size: 100%
+	}*/
+	#wrapper>section:nth-child(2){
+		background: url(00_img/LELABO_BG02.png) no-repeat center bottom;
+		background-size: 100%
+	}
+	#wrapper>section:nth-child(3){
+		background: url(00_img/LELABO_BG03.png) no-repeat center bottom;
+		background-size: 100%
+	}
+	/*#wrapper>section:nth-child(4){
+		background: url(00_img/LELABO_BG04.png) no-repeat center bottom;
+		background-size: 100%
+	}*/
+	/*nav GNB*/
+	nav#gnb{
+		/*border:1px solid red;*/
+		position: fixed;
+		width: 664x;
+		height: 93px;
+		left: 50%;
+		margin-left: -350px;
+		top:15px;
+		z-index: 9999;
+			overflow: hidden;
+		}
+	#gnb li{
+		/*border:1px solid green;*/
+		float: left;
+		width: 166px;
+		height: 93px;
+		box-sizing: border-box;
+		list-style: none;
+		text-align: center;
+		line-height: 100px;
+	}
+	#gnb li:nth-child(1){
+		background: url(00_nav/LE-LABO_nav_02.png);
+	}
+	#gnb li:nth-child(2){
+		background: url(00_nav/LE-LABO_nav_03.png);
+	}
+	#gnb li:nth-child(3){
+		background: url(00_nav/LE-LABO_nav_04.png);
+	}
+	#gnb li:nth-child(4){
+		background: url(00_nav/LE-LABO_nav_05.png);
+	}
+	#gnb li a{
+		display: block;
+		text-indent: -9999px;
+	}
+		/*nav hover*/
+		#gnb li:nth-child(1):hover, #gnb li:nth-child(1).active{
+		width: 166px;
+		height: 94px;
+		background: url(00_nav/LELABO_nav_ani01.png);
+		animation: ani 5s steps(49) infinite;
+		}
+		@keyframes ani{
+		from{}
+		to{background-position:-8134px;}
+		}	
+		#gnb li:nth-child(2):hover, #gnb li:nth-child(2).active{
+		width: 166px;
+		height: 94px;
+		background: url(00_nav/LELABO_nav_ani02.png);
+   		animation: ani2 5s steps(49) infinite;
+		}
+		@keyframes ani2{
+			from{}
+			to{background-position:-8134px;}
+		}
+		#gnb li:nth-child(3):hover, #gnb li:nth-child(3).active{
+			width: 166px;
+			height: 94px;
+			background: url(00_nav/LELABO_nav_ani03.png);
+   			animation: ani3 5s steps(49) infinite;
+		}
+		@keyframes ani3{
+			from{}
+			to{background-position:-8134px;}
+		}
+		#gnb li:nth-child(4):hover, #gnb li:nth-child(4).active{
+			width: 166px;
+			height: 94px;
+			background: url(00_nav/LELABO_nav_ani04.png);
+   			animation: ani4 5s steps(49) infinite;
+		}
+		@keyframes ani4{
+			from{}
+			to{background-position:-8134px;}
+		}
+		.sticky{
+			position: -webkit- sticky;
+			position: sticky;
+
+		}
+
+		/*HOME 페이지*/
+		#HOMEBG{
+			/*border: 1px solid red;*/
+			background: url(02_home/LELABO_bg.png) no-repeat;
+			left: 50%;
+			margin-left: -875px;
+			width: 1715px;
+			height: 778px;
+			position: absolute;			
+			bottom:35px;
+		}
+		/*HOME 잎사귀*/
+		#HOMEBG01{
+			/*border: 1px solid red;*/
+			background: url(02_home/LELABO_bg01.png) no-repeat;
+			width: 473px;
+			height: 433px;
+			position: absolute;
+			right: 50%;
+			margin-right: 500px;
+			bottom: 0px;
+			z-index: 3;
+		}
+		#HOMEBG02{
+			/*border: 1px solid red;*/
+			background: url(02_home/LELABO_bg02.png) no-repeat;
+			width: 587px;
+			height: 561px;
+			position: absolute;
+			left: 77.8%;
+			/*margin-left: 530px;*/
+			bottom: 0px;
+			z-index: 3;
+		}
+
+		
+		/*HOME 캐릭터*/
+		.angel{
+			background: url(02_home/home_ani-02.png) no-repeat;
+			width: 251px;
+			height: 121px;
+			position: absolute;
+			left: 50%;
+			margin-left: -550px;
+			bottom: 677px;
+			animation: angel 1s steps(2) infinite;
+			transition: transform .5s linear;
+		}
+		@keyframes angel{
+			from{}
+			to{background-position: -500px;}
+		}
+		@media screen and (min-width: 768px) and (max-width: 959px){
+		#wrapper{
+			height: 100%;
+	 	}
+		div #angel{
+			top:-10000px;
+	 		}
+		}
+
+		/*home carousel*/
+		#carousel{
+			/*border: 1px solid red;*/
+			width: 1088px;
+			height: 522px;
+			position: absolute;
+			left: 50%;
+			margin-left: -565px;
+			bottom: 150px;
+			margin-bottom: 20px;
+			overflow: hidden;
+		}
+		#carousel ol.gallery{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		#carousel ol.gallery li{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 100%;
+			list-style: none;
+		}
+		#carousel ol.gallery li:nth-child(1){
+			background: url(02_home/LELABO_home_01.png) no-repeat center;
+			left: 0;
+		}
+		#carousel ol.gallery li:nth-child(2){
+			background: url(02_home/LELABO_home_02.png) no-repeat center;
+		}
+		#carousel ol.gallery li:nth-child(3){
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		#carousel ol.btn_set{
+			/*border: 1px solid red;*/
+			position: absolute;
+			bottom:0px;
+			left: 45%;
+		}
+		#carousel ol.btn_set li{
+			width: 20px;
+			height: 20px;
+			background-color: #E9E1AF;
+			float: left;
+			margin-left: 5px;
+			margin-right: 10px;
+			border-radius: 50%;
+			list-style: none;
+			cursor: pointer;
+		}
+		#carousel ol.btn_set li.active{
+			background-color: white;
+		}
+
+		/*home footer*/
+		footer p{
+			position: absolute;
+			bottom: 15px;
+			left: 50%;
+			margin-left: -450px;
+			font-size: 0.7em;
+		}
+
+		/*SHOP 페이지*/
+		#SHOPBG{
+			/*border: 1px solid red;*/
+			background-attachment: fixed;
+			background: url(03_shop/LELABO_bg01.png) center;
+			width: 1529px;
+			height: 845px;
+			position: absolute;
+			left: 13%;
+			/*margin-left: -710px;*/
+			bottom: 0px;
+		}
+		#SHOP_art{
+			/*border: 1px solid red;*/
+			background: url(03_shop/LELABO_bg02.png) center;
+			width: 414px;
+			height: 277px;
+			position: absolute;
+			left: 60%;        
+			bottom: 470px;
+			cursor: pointer;
+			animation: pulse 1s infinite;
+			z-index: 5;
+
+		}
+		#point2{
+			background: url(00_img/hands_point-27.png);
+			width: 86px;
+			height: 86px;
+			position: absolute;
+			left: 78.8%;
+			bottom: 430px;
+			animation: flash 2s infinite;
+		}
+	
+		/*SHOP 캐릭터*/
+		#cha2{
+			animation: shakeY 13s infinite;
+		}
+		.angel4{
+			/*border: 1px solid red;*/
+			background: url(03_shop/LELABO_ani02.png);
+			width: 125px;
+			height: 197px;
+			position: fixed;
+			left: 88%;
+			/*margin-left: 710px;*/
+			top:50px;
+			animation: angel4 1s steps(2) infinite;
+		}
+		@keyframes angel4{
+			from{}
+			to{background-position: -248px;}
+		}
+		/*chick 요소*/
+		#point{
+			background: url(00_img/hands_point-25.png);
+			width: 86px;
+			height: 86px;
+			position: absolute;
+			left: 7%;
+			bottom: 630px;
+			animation: flash 2s infinite;
+		}
+		/*SHOP 향수*/
+		.per{
+			text-indent: -9999px;
+			left: 50%;
+			width: 62px;
+			height: 88px;
+			position: absolute;
+			cursor: pointer;
+			animation: pulse 1s infinite;
+		}
+		.per:hover{
+			animation-play-state: paused;
+		}
+
+		.ambrette9{
+			background: url(03_shop/perfumes/ambrette9.png);
+			margin-left: -645px;
+			bottom:523px;
+
+		}
+		.another13{
+			background: url(03_shop/perfumes/another13.png);
+			margin-left: -580px;
+			bottom:523px;
+		}
+		.baie19{
+			background: url(03_shop/perfumes/baie19.png);
+			margin-left: -515px;
+			bottom:523px;
+		}
+		.figue15{
+			background: url(03_shop/perfumes/figue15.png);
+			margin-left: -360px;
+			bottom:523px;
+		}
+		.iris39{
+			background: url(03_shop/perfumes/iris39.png);
+			margin-left: -300px;
+			bottom:523px;
+		}
+		.jasmin17{
+			background: url(03_shop/perfumes/jasmin17.png);
+			margin-left: -240px;
+			bottom:523px;
+		}
+		.labdanum18{
+			background: url(03_shop/perfumes/labdanum18.png);
+			margin-left: -645px;
+			bottom:365px;
+		}
+		.lys41{
+			background: url(03_shop/perfumes/lys41.png);
+			margin-left: -580px;
+			bottom:365px;
+		}
+		.neroli36{
+			background: url(03_shop/perfumes/neroli36.png);
+			margin-left: -515px;
+			bottom:365px;
+		}
+		.patchouli24{
+			background: url(03_shop/perfumes/patchouli24.png);
+			margin-left: -360px;
+			bottom:365px;
+		}
+		.petitgain21{
+			background: url(03_shop/perfumes/petitgain21.png);
+			margin-left: -300px;
+			bottom:365px;
+		}
+		.rose31{
+			background: url(03_shop/perfumes/rose31.png);
+			margin-left: -240px;
+			bottom:365px;
+		}
+		.santal33{
+			background: url(03_shop/perfumes/santal33.png);
+			margin-left: -630px;
+			bottom:207px;
+		}
+		.theNolr29{
+			background: url(03_shop/perfumes/theNolr29.png);
+			margin-left: -550px;
+			bottom:207px;
+		}
+		.tonka25{
+			background: url(03_shop/perfumes/tonka25.png);
+			margin-left: -320px;
+			bottom:207px;
+		}
+		.ylang49{
+			background: url(03_shop/perfumes/ylang49.png);
+			margin-left: -250px;
+			bottom:207px;
+		}
+		/*제품 메모*/
+		.black_bg{
+			width: 100%;
+			height: 100%;
+			background-color: black;
+			position: absolute;
+			z-index: 6;
+			opacity: 0.5;
+		}
+		.memo_center{
+			/*border: 1px solid red;*/
+			position: absolute;
+			right: 50%;
+			margin-right: -275px;
+			cursor: pointer;
+			z-index: 7;
+		}
+		.memo_p{
+			/*border: 1px solid red;*/
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-17.png);
+			position: absolute;
+			right: 50%;
+			margin-right: -600px;
+			top:50%;
+			margin-top: -240px;
+			z-index: 7;
+		}
+		/*제품 메모 내용*/
+		.memo1{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-01.png);
+		}
+		.memo2{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-02.png);
+		}
+		.memo3{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-03.png);
+		}
+		.memo4{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-04.png);
+		}
+		.memo5{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-05.png);
+		}
+		.memo6{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-06.png);
+		}
+		.memo7{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-07.png);
+		}
+		.memo8{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-08.png);
+		}
+		.memo9{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-09.png);
+		}
+		.memo10{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-10.png);
+		}
+		.memo11{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-11.png);
+		}
+		.memo12{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-12.png);
+		}
+		.memo13{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-13.png);
+		}
+		.memo14{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-14.png);
+		}
+		.memo15{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-15.png);
+		}
+		.memo16{
+			width: 550px;
+			height: 480px;
+			background: url(03_shop/memo/LELABO_memo-16.png);
+		}
+		/* SHOP 향기 정보 메모 carousel*/
+		#art_memo #m_bnt{
+			background: url(03_shop/memo/perfume_memo-bnt.png) no-repeat center;
+			width: 40px;
+			height: 45px;
+			position: absolute;
+			cursor: pointer;
+			left: 50%;
+			margin-left: 480px;
+			top:50%;
+			margin-top: -150px;
+			z-index: 9;
+		}
+		#art_memo #carousel2{
+			/*border:1px solid red;*/
+			width: 550px;
+			height: 481px;
+			position: absolute;
+			right: 50%;
+			margin-right: -600px;
+			top:50%;
+			margin-top: -240px;
+			z-index: 7;
+			overflow: hidden;
+		}
+		#art_memo #carousel2 ol.gallery2{
+			width: 100%;
+			height: 100%;
+			/*border: 1px solid green;*/
+			position: absolute;	
+			background: url(03_shop/memo/perfume_memo-00.png) no-repeat center;
+		}
+
+		#art_memo #carousel2 ol.gallery2 li{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 100%;
+			text-indent: -9999px;
+			box-sizing: border-box;
+		}
+		#art_memo #carousel2 ol.gallery2 li:nth-child(1){
+			left: 0;
+			background: url(03_shop/memo/perfume_memo-01.png) no-repeat center;
+		}
+		#art_memo #carousel2 ol.gallery2 li:nth-child(2){
+			background: url(03_shop/memo/perfume_memo-02.png) no-repeat center;
+		}
+		#art_memo #carousel2 ol.gallery2 li:nth-child(3){
+			background: url(03_shop/memo/perfume_memo-03.png) no-repeat center;
+		}
+		#art_memo #carousel2 .fas{
+			color: #ECD151;
+			position: absolute;
+			font-size: 2em;
+			bottom: 200px;
+			cursor: pointer;
+		}
+		#art_memo #carousel2 .fa-angle-left{
+			left: 30px;
+		}
+		#art_memo #carousel2 .fa-angle-right{
+			right: 50px;
+		}	
+
+		/*NEW&EVENT 페이지*/
+		#click{
+			background: url(00_img/hands_point05.png);
+			width: 191px;
+			height: 124px;
+			position: absolute;
+			animation:  shakeY 7s infinite;
+			left: 50%;
+			margin-left: -95px;
+			bottom: 40px;
+			cursor: pointer;
+		}
+		
+		#labell{
+			/*border: 1px solid blue;*/
+			width: 711px;
+			height: 351px;
+			background: url(04_new/labell.png);
+			position: absolute;
+			left: 50%;
+			margin-left:-380px;
+			bottom: 10px;
+			cursor: pointer;
+		}
+		#labell #text{
+			width: 240px;
+			height: 100px;
+			position: absolute;
+			left: 50%;
+			margin-left: -100px;
+			top: 150px;
+			/*border: 1px solid red;*/
+		}
+
+
+		#NnE{
+			/*border: 1px solid red;*/
+			background: url(04_new/LELABO_new.png);
+			width: 1184px;
+			height: 373px;
+			position: absolute;
+			left: 50%;
+			margin-left: -610px;
+			bottom:330px;
+			z-index: 3;
+		}
+		#NnE2{
+			/*border: 1px solid red;*/
+			background: url(04_new/LELABO_new2.png);
+			width: 272px;
+			height: 424px;
+			position: absolute;
+			left: 78.5%;
+			/*margin-left:580px;*/
+			bottom: 10px;
+			z-index: 5
+
+		}
+		/*youtube버튼*/
+		#NnE2 #youtube{
+			background: url(04_new/youtube_ani.png);
+			width: 71px;
+			height: 63px;
+			position: absolute;
+			left: 50%;
+			margin-left: -55px;
+			top: 115px;
+			z-index: 6;
+			cursor: pointer;
+			animation: youtube 0.8s steps(4) infinite;
+		}
+		@keyframes youtube{
+			from{}
+			to{background-position: -282px;}
+		}
+		#youtubeMemo{
+			background: url(04_new/LELABO__youtubeMemo-01.png);
+			width: 845px;
+			height: 447px;
+			z-index:100;
+			position: absolute;
+			bottom: 220px;
+			margin-left: 26%;
+		}
+		#youtubeMemo2{
+			position: absolute;
+			left: 50%;
+			margin-left:-362px;
+			top: 83.5px;
+			border-radius: 15px;
+		}
+		#youtubeBtn{
+			background: url(04_new/LELABO__youtubeMemoBtn-02.png);
+			width: 79px;
+			height: 73px;
+			position: absolute;
+			left: 50%;
+			margin-left: 250px;
+			top: 70px;
+		}
+		#youtubeBtn:hover{
+			background: url(04_new/LELABO__youtubeMemoBtn-01.png);
+			cursor: pointer;
+		}
+		/*신제품코너*/
+		.new_center{
+			position: absolute;
+			left: 50%;
+			z-index: 5;
+			cursor: pointer;
+
+		}
+		.citron00_twt{
+			background: url(04_new/citron_01_txt.png);
+			width: 136px;
+			height: 46px;
+			margin-left: -50px;
+			bottom: 660px;
+			z-index: 2;
+		}
+		.mouse:hover{
+			animation-play-state: paused;
+		}
+		.citron01{
+			background: url(04_new/citron01.png);
+			width: 211px;
+         	height: 111px;
+         	 animation: pulse 1s infinite;
+        	 bottom: 410px;
+        	 margin-left: -420px;
+		}
+		.citron02{
+			width: 121px;
+         	height: 131px;
+         	background: url(04_new/citron02.png);
+         	animation: pulse 1s infinite;
+         	bottom: 510px;
+         	margin-left: -545px;
+		}
+		.citron03{
+			width: 141px;
+         	height: 131px;
+         	background: url(04_new/citron03.png);
+         	animation: pulse 1s infinite;
+         	bottom: 630px;
+         	margin-left: 255px;
+		}
+		.citron04{
+			width: 192px;
+        	height: 159px;
+        	background: url(04_new/citron04.png);
+        	margin-left: -70px;
+        	bottom: 500px;
+        	animation: pulse 1s infinite;
+		}
+		.citron05{
+			background: url(04_new/citron05.png);
+       		width: 191px;
+       		height: 101px;
+       		bottom: 370px;
+       		margin-left: 80px;
+       		animation: pulse 1s infinite;
+       		cursor: pointer;
+		}
+		.citron06{
+			width: 131px;
+        	height: 90px;
+        	background: url(04_new/citron06.png);
+        	animation: pulse 1s infinite;
+        	bottom: 675px;
+        	margin-left: -315px;
+		}
+		.citron07{
+			background: url(04_new/citron07.png);
+        	width: 151px;
+        	height: 91px;
+        	bottom: 500px;
+        	margin-left: 380px;
+        	animation: pulse 1s infinite;
+        	cursor: pointer;
+		}
+
+		
+		/*New & event 뜨는 말풍선창 */
+		.sbcenter{
+			position: absolute;
+			left: 50%;
+			z-index: 6;
+			width: 301px;
+			height: 301px;
+
+		}
+		.speeckBubble01{
+			background: url(04_new/memo/speeckBubble01.png);
+			margin-left: -240px;
+			bottom: 450px;
+		}
+		.speeckBubble02{
+			background: url(04_new/memo/speeckBubble02.png);
+			margin-left: -430px;
+			bottom:550px;
+		}
+		.speeckBubble03{
+			background: url(04_new/memo/speeckBubble03.png);
+			margin-left: 365px;
+			bottom:660px;
+		}
+		.speeckBubble04{
+			background: url(04_new/memo/speeckBubble04.png);
+			margin-left: 125px;
+			bottom:550px;
+		}
+		.speeckBubble05{
+			background: url(04_new/memo/speeckBubble05.png);
+			margin-left: 240px;
+			bottom:400px;
+		}
+		.speeckBubble06{
+			background: url(04_new/memo/speeckBubble06.png);
+			margin-left: -600px;
+			bottom:675px;
+		}
+		.speeckBubble07{
+			background: url(04_new/memo/speeckBubble07.png);
+			margin-left: 510px;
+			bottom:530px;
+		}
+		
+
+		/*GIFT 페이지*/
+		#GIFTBG{
+			background: url(05_Gift/LELABO_GIFTBG.png) center;
+			width: 1543px;
+			height: 741px;
+			position: absolute;
+			left: 50%;
+			margin-left:-771.5px;
+			bottom: 50px;
+		}
+		#GIFTBG01{
+			background: url(05_Gift/LELABO_gift03.png) bottom;
+			width: 642px;
+			height: 710px;
+			position: absolute;
+			left: 50%;
+			margin-left:-1250px;
+			bottom: 5px;
+
+		}
+		#GIFTBG02{
+			background: url(05_Gift/LELABO_gift04.png) bottom;
+			width: 400px;
+			height: 722px;
+			position: absolute;
+			left: 50%;
+			margin-left: 600px;
+			bottom: 5px;
+		}
+		/*GIFT 홈페이지 잎 움직이기*/
+		#green01{
+			background: url(05_Gift/LELABO_green_ani_01.png);
+			width: 647px;
+			height: 339px;
+			position: absolute;
+			top: 150px;
+			animation: green01 3.5s steps(16) infinite;
+			left: 50%;
+			margin-left: -950px;
+
+		}
+		@keyframes green01{
+			from{}
+			to{background-position: -10333px;}
+		}
+		#green02{
+			background: url(05_Gift/LELABO_green_ani_02.png);
+			width: 636px;
+			height: 657px;
+			position: absolute;
+			top: 200px;
+			animation: green02 2.5s steps(15) infinite;
+			left: 50%;
+			margin-left: 350px;
+
+		}
+		@keyframes green02{
+			from{}
+			to{background-position: -9531px;}
+		}
+
+		/*GIFT 캐릭터*/
+		div#cha{
+			width: 1300px;
+			height: 300px;
+			position: absolute;
+			right: 50%;
+			margin-right: -680px;
+			bottom: 55px;
+			animation: shakeY 13s infinite;
+			z-index: 15;
+		}
+
+		.angel2{
+			background: url(05_Gift/LELABO_ani.png) no-repeat;
+			width: 237px;
+			height: 185px;
+			position: absolute;
+			right: 50%;
+			margin-right: -750px;
+			bottom: 30px;
+			animation: angel2 1s steps(2) infinite;
+		}
+		
+		@keyframes angel2{
+			from{}
+			to{background-position: -472px;}
+		}
+		.angel3{
+			background: url(05_Gift/LELABO_ani02.png) no-repeat;
+			width: 237px;
+			height: 185px;
+			position: absolute;
+			right: 50%;
+			margin-right: 550px;
+			bottom: 30px;
+			animation: angel3 1s steps(2) infinite;
+		}
+		
+		@keyframes angel3{
+			from{}
+			to{background-position: -472px;}
+		}
+		/*GIFT홈페이지*/
+		.gift_center{
+			/*border: 1px solid red;*/
+			position: absolute;
+			left: 50%;
+			cursor: pointer;
+			z-index: 20;
+		}
+		.gift_set01{
+			background: url(05_Gift/gift_set_01.png);
+			width: 231px;
+			height: 226px;
+			margin-left: -460px;
+			bottom: 500px;
+		}
+		.gift_set02{
+			background: url(05_Gift/gift_set_01.png);
+			width: 231px;
+			height: 226px;
+			margin-left: -100px;
+			bottom: 500px;
+		}
+		.gift_set03{
+			background: url(05_Gift/gift_set_01.png);
+			width: 231px;
+			height: 226px;
+			margin-left: 260px;
+			bottom: 500px;
+		}
+		.gift_set04{
+			background: url(05_Gift/gift_set_01.png);
+			width: 231px;
+			height: 226px;
+			margin-left: -460px;
+			bottom: 200px;
+		}
+		.gift_set05{
+			background: url(05_Gift/gift_set_01.png);
+			width: 231px;
+			height: 226px;
+			margin-left: -100px;
+			bottom: 200px;
+		}
+		.gift_set06{
+			background: url(05_Gift/gift_set_01.png);
+			width: 231px;
+			height: 226px;
+			margin-left: 260px;
+			bottom: 200px;
+		}
+		/*선물 호버시*/
+		.gift_set01:hover{
+			background: url(05_Gift/gift_set_02.png);
+			width: 231px;
+			height: 226px;
+			margin-left: -460px;
+			bottom: 500px;
+		}
+		.gift_set02:hover{
+			background: url(05_Gift/gift_set_03.png);
+			width: 231px;
+			height: 226px;
+			margin-left: -100px;
+			bottom: 500px;
+		}
+		.gift_set03:hover{
+			background: url(05_Gift/gift_set_04.png);
+			width: 231px;
+			height: 226px;
+			margin-left: 260px;
+			bottom: 500px;
+		}
+		.gift_set04:hover{
+			background: url(05_Gift/gift_set_05.png);
+			width: 231px;
+			height: 226px;
+			margin-left: -460px;
+			bottom: 200px;
+		}
+		.gift_set05:hover{
+			background: url(05_Gift/gift_set_06.png);
+			width: 231px;
+			height: 226px;
+			margin-left: -100px;
+			bottom: 200px;
+		}
+		.gift_set06:hover{
+			background: url(05_Gift/gift_set_07.png);
+			width: 231px;
+			height: 226px;
+			margin-left: 260px;
+			bottom: 200px;
+		}
+
+		/*선물세트 눌렀을때 뜨는 창*/
+		.g_center{
+			width: 401px;
+			height: 351px;
+			position: absolute;
+			top: 0.2%;
+			left:50%;
+			z-index: 50;
+			cursor: pointer;
+		}
+		.goods01{
+			background: url(05_Gift/memo/LELABO_goods_01.png);
+			margin-left: -520px;
+			margin-top: 185px;
+		}
+		.goods02{
+			background: url(05_Gift/memo/LELABO_goods_02.png);
+			margin-left: -190px;
+			margin-top: 185px;
+		}
+		.goods03{
+			background: url(05_Gift/memo/LELABO_goods_03.png);
+			margin-left: 150px;
+			margin-top: 185px;
+		}
+		.goods04{
+			background: url(05_Gift/memo/LELABO_goods_04.png);
+			margin-left: -550px;
+			margin-top: 504px;
+		}
+		.goods05{
+			background: url(05_Gift/memo/LELABO_goods_05.png);
+			margin-left: -220px;
+			margin-top: 504px;
+		}
+		.goods06{
+			background: url(05_Gift/memo/LELABO_goods_06.png);
+			margin-left: 160px;
+			margin-top: 504px;
+		}
+
+		/*구매하기 버튼*/
+		.cart{
+			background: url(05_Gift/memo/cart1.png);
+			width: 127px;
+			height: 54px;
+			position: absolute;
+			left: 50%;
+			margin-left: -80px;
+			bottom: 20px;
+		}
+		/*구매하기 버튼 호버시*/
+		.cart:hover{
+			background: url(05_Gift/memo/cart2.png);
+			width: 127px;
+			height: 54px;
+			position: absolute;
+			left: 50%;
+			margin-left: -80px;
+			bottom: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<!-- 메인 -->
+	<section id="HOME">
+		<div id="HOMEBG"></div>
+		<div id="HOMEBG01"></div>
+		<div id="HOMEBG02"></div>
+		<div class="angel"></div>
+		<div class="home_in"></div>
+		<nav id="gnb">
+			<ul>
+				<li class="active"><a href="#HOME">HOME</a></li>
+				<li><a href="#SHOP">SHOP</a></li>
+				<li><a href="#EVENT">EVENT</a></li>
+				<li><a href="#GIFT">GIFT</a></li>
+				</ul>
+		</nav>
+		<!-- 메인의 캐로셀 -->
+		<div id="carousel">
+		<ol class="gallery">
+			<li></li>
+			<li></li>
+			<li><iframe width="1088" height="522" src="https://www.youtube.com/embed/oGGjA_3_9qc?autoplay=&color=white" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+		</ol>
+		<ol class="btn_set">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+		</div>
+		<footer>
+			<p>Le Labo Holding LLC, with company number 4129441 and with its registered office address at 7 Corporate Center Drive, Melville, NY 11747, USA, and ELCA Korea Ltd.,<br> with company number 211-81-71889 and with its registered office address at 8th Floor, Meritz Tower 382, Kangnam-daero, Kangnam-Ku, Seoul 135-080, Republic of Korea.</p>
+		</footer>
+	</section>
+	<!-- 샵페이지 -->
+	<section id="SHOP">
+		<div class="black_bg"></div>
+		<div id="SHOP_art"></div>
+		<span id="point2"></span>
+		<div id="cha2">
+			<div class="angel4"></div>
+		</div>
+		<div id="SHOPBG">
+		<span id="point"></span>
+			<div id="perfumes">
+			<div class="ambrette9 per">ambrette9</div>
+			<div class="another13 per">another13</div>
+			<div class="baie19 per">baie19</div>
+			<div class="figue15 per">figue15</div>
+			<div class="iris39 per">iris39</div>
+			<div class="jasmin17 per">jasmin17</div>
+			<div class="labdanum18 per">labdanum18</div>
+			<div class="lys41 per">lys41</div>
+			<div class="neroli36 per">neroli36</div>
+			<div class="patchouli24 per">patchouli24</div>
+			<div class="petitgain21 per">petitgain21</div>
+			<div class="rose31 per">rose31</div>
+			<div class="santal33 per">santal33</div>
+			<div class="theNolr29 per">theNolr29</div>
+			<div class="tonka25 per">tonka25</div>
+			<div class="ylang49 per">ylang49</div>
+		</div>
+		</div>
+		<div class="memo_p">
+			<div class="memory memo1 memo_center"></div>
+			<div class="memory memo2 memo_center"></div>
+			<div class="memory memo3 memo_center"></div>
+			<div class="memory memo4 memo_center"></div>
+			<div class="memory memo5 memo_center"></div>
+			<div class="memory memo6 memo_center"></div>
+			<div class="memory memo7 memo_center"></div>
+			<div class="memory memo8 memo_center"></div>
+			<div class="memory memo9 memo_center"></div>
+			<div class="memory memo10 memo_center"></div>
+			<div class="memory memo11 memo_center"></div>
+			<div class="memory memo12 memo_center"></div>
+			<div class="memory memo13 memo_center"></div>
+			<div class="memory memo14 memo_center"></div>
+			<div class="memory memo15 memo_center"></div>
+			<div class="memory memo16 memo_center"></div>
+		</div>
+		<!-- 향의 종류 메모 캐로셀 -->
+		<div id="art_memo">
+			<div id="m_bnt"></div>
+			<div id="carousel2">	
+				<ol class="gallery2">
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<i class="fas fa-angle-left"></i>
+				<i class="fas fa-angle-right"></i>
+			</div>
+		</div>
+			
+	</section>
+	<!-- 이벤트 페이지 -->
+	<section id="EVENT">
+		<div id="youtubeMemo">
+			<div id="youtubeBtn"></div>
+			<iframe id="youtubeMemo2" width="551" height="299" src="https://www.youtube.com/embed/duh2DGG8c90?autoplay=&color=white" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<span id="click"></span>
+		<div id="NnE"></div>
+		<div id="NnE2">
+			<div id="youtube"></div>
+		</div>
+		<div id="labell">
+			<div id="text">
+				<form>
+					<textarea name="text"cols="25" rows="3" placeholder="Please enter your message"></textarea>
+					<input type="reset" value="저장">
+				</form>
+			</div>
+		</div>
+			<!-- 이벤트창에 제품들 -->
+			<div class="citron00_twt new_center"></div>
+			<div id="citron">
+				<div class="mouse citron01 new_center"></div>
+				<div class="mouse citron02 new_center"></div>
+				<div class="mouse citron03 new_center"></div>
+				<div class="mouse citron04 new_center"></div>
+				<div class="mouse citron05 new_center"></div>
+				<div class="mouse citron06 new_center"></div>
+				<div class="mouse citron07 new_center"></div>
+			</div>
+			
+			<!-- 이벤트창 말풍선 -->
+			<div class="sbP">
+				<div class="speeckBubble01 sbcenter"></div>
+				<div class="speeckBubble02 sbcenter"></div>
+				<div class="speeckBubble03 sbcenter"></div>
+				<div class="speeckBubble04 sbcenter"></div>
+				<div class="speeckBubble05 sbcenter"></div>
+				<div class="speeckBubble06 sbcenter"></div>
+				<div class="speeckBubble07 sbcenter"></div>	
+			</div>	
+		</section>
+			<!-- 기프트 페이지 -->
+		<section id="GIFT">
+			<div id="GIFTBG"></div>
+			<div id="GIFTBG01"></div>
+			<div id="GIFTBG02"></div>
+			<div id="cha">
+				<div class="angel2"></div>
+				<div class="angel3"></div>
+			</div>
+			<!-- 기프트창에 선물들 -->
+			<div id="gift_set">
+				<div class="gift_set01 gift_center"></div>
+				<div class="gift_set02 gift_center"></div>
+				<div class="gift_set03 gift_center"></div>
+				<div class="gift_set04 gift_center"></div>
+				<div class="gift_set05 gift_center"></div>
+				<div class="gift_set06 gift_center"></div>
+			</div>
+			<!-- 움직이는 잎 -->
+			<div id="green01"></div>
+			<div id="green02"></div>
+			<!-- 선물 눌렀을때 뜨는 창 -->
+			<div class="goods goods01 g_center">
+				<div class="cart"></div>
+			</div>
+			<div class="goods goods02 g_center">
+				<div class="cart"></div>
+			</div>
+			<div class="goods goods03 g_center">
+				<div class="cart"></div>
+			</div>
+			<div class="goods goods04 g_center">
+				<div class="cart"></div>
+			</div>
+			<div class="goods goods05 g_center">
+				<div class="cart"></div>
+			</div>
+			<div class="goods goods06 g_center">
+				<div class="cart"></div>
+			</div>
+		</section>
+
+	</div>
+	
+	<script>
+		$(document).ready(function(){
+					
+			// $(".memo_p, .memory").hide();
+			var black_bg=$(".black_bg");
+			var memo_p=$(".memo_p");
+			var memory=$(".memory");
+			var per=$(".per");
+
+				black_bg.hide();
+				memo_p.hide();
+				memory.hide();
+				//향수병 클릭했을 때
+			per.click(function(){
+				var i =$(this).index();
+					// alert(i);
+				per.removeClass("perfumes");
+				$(this).addClass("perfumes");
+				black_bg.show();
+				memo_p.show();
+				memory.hide();
+				memory.eq(i).slideDown();
+				})
+				memory.click(function(){
+		 			memo_p.hide();
+		 			memory.hide();
+		 			black_bg.hide();
+				})
+
+				black_bg.click(function(){
+					memo_p.hide();
+					memory.hide();
+					black_bg.hide();
+					carousel2_memo.hide();
+				})
+		
+				// new&event 홈페이지의 클릭요소
+				$("#labell").hide();
+				$("#click").click(function(){
+					$("#labell").fadeTo(1000,1)
+					$("#click").hide();
+				})
+
+				$("input").click(function(){
+					$("#labell").hide(1000);
+					$("#click").show(1000);
+				})
+					
+				// 홈페이지 캐로셀
+				var carousel_img=$(".gallery li");
+				var carousel_btn=$(".btn_set li");
+				var current = 0;
+
+				carousel_btn.click(function(){
+					var tg = $(this);
+					var i =tg.index();
+					if(current==i){
+						return 0
+					}
+
+				move(i);
+
+				function move(i){
+					var currentImg = carousel_img.eq(current);
+					var nextImg = carousel_img.eq(i);
+					currentImg.stop().css("left",0).animate({"left":"-100%"});
+					nextImg.stop().css("left","100%").animate({"left":0});
+					current =i ; 
+				}
+				carousel_btn.removeClass("active");
+				tg.addClass("active")
+			})
+				// 네비 호버시 고정
+				var nav=$("#gnb ul li");
+
+				nav.click(function(){
+					nav.removeClass("active");
+					$(this).addClass("active");
+				})
+				// 네비 호버시 고정 끝
+
+				//gift 세트 눌렀을때 뜨는 창
+				var goods=$(".goods");
+				var gift_set=$("#gift_set");
+				var gift_center=$(".gift_center");
+					
+					goods.hide();
+
+				gift_center.click(function(){
+					var i =$(this).index();
+					// alert(i);
+					// goods.eq(i+1).slideDown(100);
+					goods.hide();
+					goods.eq(i).show();
+
+				})
+				var cart=$(".cart");
+				var urls=["https://www.lelabofragrances.com/body--hair--face.html","https://www.lelabofragrances.com/another-13.html","https://www.lelabofragrances.com/body--hair--face.html","https://www.lelabofragrances.com/santal-26.html","https://www.lelabofragrances.com/bergamote-22.html","https://www.lelabofragrances.com/th-noir-29.html"];
+				cart.click(function(){
+					var i=$(this).parent().index();
+					window.open("about;blank").location.href=urls[i-7];
+				})
+
+				goods.click(function(){
+					goods.hide();
+					goods.eq(i).hide();
+				})
+
+				//gift 세트 눌렀을때 뜨는 창 끝
+
+				//이벤트 페이지 클릭시 말풍선 뜨는 창
+				var citrons=$(".mouse");
+				var citrons01=$("#citron");
+				var sbp=$(".sbcenter");
+
+					sbp.hide();
+
+				citrons.click(function(){
+					var i=$(this).index();
+					// alert(i);
+					sbp.hide();
+					sbp.eq(i).show(100);
+				})
+
+				sbp.click(function(){
+					sbp.hide();
+					sbp.eq(i).hide();
+				})
+
+				//이벤트 페이지 클릭시 말풍선 뜨는 창 끝
+
+				//마우스 스크롤
+				var wrapper =$("#wrapper");
+
+				$("#wrapper").on("mousewheel",function(event, delta){
+					var left = $(window).scrollLeft();
+
+				if(delta>0){
+			
+					var prev = left-1910;
+					$("html,body").stop().animate({"scrollLeft":prev},100,"linear");	
+
+				}else if(delta<0){
+
+					var next = left+1910;
+					$("html,body").stop().animate({"scrollLeft":next},100,"linear");
+			}
+
+			})
+				//SHOP 향수정보 캐로셀
+				var carousel2_img =$(".gallery2 li");
+				var current=0;
+				var carousel2_prevBtn=$("#carousel2 .fa-angle-left");
+				var carousel2_nextBtn=$("#carousel2 .fa-angle-right");
+				var i =0;	
+
+				carousel2_prevBtn.click(function(){
+					var currentImg = carousel2_img.eq(current);
+					var nextImg = carousel2_img.eq(current=current-1);
+					currentImg.stop().css("left",0).animate({"left":"100%"});
+					nextImg.stop().css("left","-100%").animate({"left":0});
+
+					if(current==-1){
+						current=2;
+					}
+					i=i-1;
+				})
+				carousel2_nextBtn.click(function(){
+					var currentImg = carousel2_img.eq(current);
+					var nextImg = carousel2_img.eq(current=current+1);
+					currentImg.stop().css("left",0).animate({"left":"-100%"});
+					nextImg.stop().css("left","100%").animate({"left":0});
+
+					if(current==3){
+						current=-1;
+
+						var currentImg =carousel2_img.eq(current);
+						var nextImg = carousel2_img.eq(current=current+1);
+						currentImg.stop().css("left",0).animate({"left":"-100%"});
+						nextImg.stop().css("left","100%").animate({"left":0});
+					}
+				})
+				var art=$("#SHOP_art");
+				var carousel2_memo =$("#art_memo");
+				var carousel2 =$("#carousel2");
+				var m_bnt =$("#m_bnt");
+
+					carousel2_memo.hide();
+				art.click(function(){
+					black_bg.show();
+					carousel2_memo.show();
+				})
+				m_bnt.click(function(){
+					carousel2_memo.hide();
+					black_bg.hide();
+				})
+				// 클릭시 영상 보이기
+				var youtuBtn=$("#youtubeBtn");
+				var youtubeMemo=$("#youtubeMemo");
+				var youtube=$("#youtube");
+
+					youtubeMemo.hide();
+
+				 youtube.click(function(){
+				 	youtubeMemo.show();
+				 })
+				 youtuBtn.click(function(){
+				 	youtubeMemo.hide();
+				 })
+
+			})
+			
+			
+		</script>
+</body>
+</html>
